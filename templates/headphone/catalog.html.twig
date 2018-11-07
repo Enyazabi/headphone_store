@@ -3,29 +3,21 @@
 {% block title %}Hello{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
+        <div class="col s3">
             <ul>
                 {% for hp in headphone %}
-                    <li>
+
                         <h5><b>{{ hp.model }}</b></h5>
-                    </li>
 
-                    <li>
                         <b> {{ hp.description }}</b>
-                    </li>
 
-                    <li>
                         <h6><b>{{ hp.cost }}</b></h6>
-                    </li>
 
-                    <li>
                         <b>{{ hp.count }}</b>
-                    </li>
 
-                    <li>
                         <b>{{ hp.class }}</b>
-                    </li>
 
                     <hr>
 
@@ -33,4 +25,5 @@
             </ul>
         </div>
     </div>
+</div>
 {% endblock %}
