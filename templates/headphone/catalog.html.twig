@@ -1,20 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Hello{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="container">
+        <div class="row">
+            <ul>
+                {% for hp in headphone %}
+                    <li>
+                        <h5><b>{{ hp.model }}</b></h5>
+                    </li>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                    <li>
+                        <b> {{ hp.description }}</b>
+                    </li>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/HeadphoneController.php'|file_link(0) }}">src/Controller/HeadphoneController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/headphone/index.html.twig'|file_link(0) }}">templates/headphone/index.html.twig</a></code></li>
-    </ul>
-</div>
+                    <li>
+                        <h6><b>{{ hp.cost }}</b></h6>
+                    </li>
+
+                    <li>
+                        <b>{{ hp.count }}</b>
+                    </li>
+
+                    <li>
+                        <b>{{ hp.class }}</b>
+                    </li>
+
+                    <hr>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

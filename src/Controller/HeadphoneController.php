@@ -16,10 +16,10 @@ class HeadphoneController extends AbstractController
      */
     public function showHeadphoneCatalog(HeadphoneRepository $headphoneRepository)
     {
-        $headphoneForm = $this->createForm(HeadphoneType::class);
+
         return $this->render('headphone/catalog.html.twig', [
             'headphone' => $headphoneRepository->findAll(),
-            'headphoneForm' => $headphoneForm->createView(),
+
         ]);
     }
 

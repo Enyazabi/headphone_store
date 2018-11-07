@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/admin", name="addProduct")
      */
     public function addProduct(Request $request)
     {
@@ -25,7 +25,7 @@ class AdminController extends AbstractController
             $em->persist($headphone);
             $em->flush();
         }
-        return $this->render('headphone/catalog.html.twig', [
+        return $this->render('admin/adminpage.html.twig', [
             'headphoneForm' => $headphoneForm->createView(),
         ]);
 

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col s6 offset-s3">
+                {{ form_start(headphoneForm, { 'action': path('addProduct'), 'method': 'POST'})
+                }}
+
+                {{ form_row(headphoneForm.model) }}
+                {{ form_row(headphoneForm.description) }}
+                {{ form_row(headphoneForm.cost) }}
+                {{ form_row(headphoneForm.count) }}
+                {{ form_row(headphoneForm.class) }}
+                <button type="submit" class="btn ">Add</button>
+                {{ form_end(headphoneForm) }}
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

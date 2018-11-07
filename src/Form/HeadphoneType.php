@@ -28,6 +28,11 @@ class HeadphoneType extends AbstractType
                     'class'   => 'validate'
                 ]
             ))
+            ->add('count',null, array(
+                'attr'   =>  [
+                    'class'   => 'validate'
+                ]
+            ))
             ->add('class',null, array(
                 'attr'   =>  [
                     'class'   => 'validate'
