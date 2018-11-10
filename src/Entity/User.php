@@ -18,7 +18,7 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $username;
 
@@ -33,7 +33,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $balance;
 
@@ -104,11 +104,18 @@ class User implements UserInterface
      *
      * @return (Role|string)[] The user roles
      */
-    public function getRoles()
+    /*public function getRoles()
     {
-        // TODO: Implement getRoles() method.
+        if($this->username === 'admin') {
+            return [
+                'ROLE_ADMIN'
+            ];
+        }
+        return [
+            'ROLE_USER'
+        ];
     }
-
+*/
     /**
      * Returns the salt that was originally used to encode the password.
      *

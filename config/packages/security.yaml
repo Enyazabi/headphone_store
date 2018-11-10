@@ -23,7 +23,7 @@ security:
 
             logout:
                 path: /logout
-                terget: /login
+                target: /login
 
 
 
