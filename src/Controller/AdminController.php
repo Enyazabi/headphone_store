@@ -3,6 +3,7 @@
 namespace App\Controller;
 use App\Entity\Headphone;
 use App\Form\HeadphoneType;
+use App\Repository\HeadphoneRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,4 +31,21 @@ class AdminController extends AbstractController
         ]);
 
     }
+
+    /**
+     * @param HeadphoneRepository $headphoneRepository
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function deleteProduct(HeadphoneRepository $headphoneRepository, $id)
+    {
+        $headphone=$headphoneRepository->findOneBy([
+            'id'=>$id,
+        ]);
+        $em=$this->getDoctrine()->getManager();
+        $em->remove($headphone);
+        $em->flush();
+        return $this->redirectToRoute('headphone');
+    }
+
 }
