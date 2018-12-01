@@ -20,6 +20,16 @@
         </div>
 
 
-    </div>
 
+                <div class="col s12 m3">
+
+                            {% for hp in headphone %}
+                            <p>{{ hp.model }}</p>
+                            <p>{{ hp.description }}</p>
+                            <p>{{ hp.cost }}</p>
+
+                            {% endfor %}
+                </div>
+
+    </div>
 {% endblock %}

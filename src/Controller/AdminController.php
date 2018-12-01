@@ -13,7 +13,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin", name="addProduct")
      */
-    public function addProduct(Request $request)
+    public function addProduct(Request $request, HeadphoneRepository $headphoneRepository)
     {
         $headphone = new Headphone();
         $headphoneForm = $this->createForm(HeadphoneType::class, $headphone);
@@ -28,8 +28,18 @@ class AdminController extends AbstractController
         }
         return $this->render('admin/adminpage.html.twig', [
             'headphoneForm' => $headphoneForm->createView(),
+            'headphone' => $headphoneRepository->findAll(),
         ]);
 
+    }
+
+    public function showHeadphoneCatalog(HeadphoneRepository $headphoneRepository)
+    {
+
+        return $this->render('admin/adminpage.html.twig', [
+            'headphone' => $headphoneRepository->findAll(),
+
+        ]);
     }
 
     /**
@@ -45,7 +55,7 @@ class AdminController extends AbstractController
         $em=$this->getDoctrine()->getManager();
         $em->remove($headphone);
         $em->flush();
-        return $this->redirectToRoute('headphone');
+        return $this->redirectToRoute('admin');
     }
 
 }
