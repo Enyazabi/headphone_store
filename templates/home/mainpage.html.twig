@@ -3,14 +3,26 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+
+
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">In-ear</a></li>
+        <li><a href="#!">On-ear</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Over-ear</a></li>
+    </ul>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Hph Store</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/headphone">Headphone</a></li>
+            <a href="#!" class="brand-logo">Hph store</a>
+            <ul class="right hide-on-med-and-down">
                 <li><a href="/login">Log in</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Headphone<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a href="/cart">Cart</a></li>
+
+
             </ul>
         </div>
+
     </nav>
+
 {% endblock %}

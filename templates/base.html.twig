@@ -8,6 +8,11 @@
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}<script src="{{  asset('assets/materialize/js/materialize.js')}}"></script>{% endblock %}
+        {% block javascripts %}
+            <script src="{{  asset('assets/materialize/js/materialize.js')}}"></script>
+            <script>
+                $('.dropdown-trigger').dropdown();
+            </script>
+        {% endblock %}
     </body>
 </html>
