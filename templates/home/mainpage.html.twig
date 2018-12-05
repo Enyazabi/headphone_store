@@ -16,7 +16,7 @@
             <a href="#!" class="brand-logo">Hph store</a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/login">Log in</a></li>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Headphone<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a href="/cart">Cart</a></li>
 
 
@@ -24,5 +24,12 @@
         </div>
 
     </nav>
+    {% block javascripts %}
+        <script src="{{  asset('assets/materialize/js/materialize.js')}}"></script>
+        <script type="text/javascript" src={{ asset('assets/jquery-3.3.1.js') }}></script>
+        <script>
 
+            $('.dropdown-trigger').dropdown();
+        </script>
+    {% endblock %}
 {% endblock %}
