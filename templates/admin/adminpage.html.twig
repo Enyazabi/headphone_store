@@ -3,33 +3,18 @@
 {% block title %}Hello{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col s6 offset-s3">
-                {{ form_start(headphoneForm, { 'action': path('addProduct'), 'method': 'POST'})
-                }}
 
-                {{ form_row(headphoneForm.model) }}
-                {{ form_row(headphoneForm.description) }}
-                {{ form_row(headphoneForm.cost) }}
-                {{ form_row(headphoneForm.count) }}
-                {{ form_row(headphoneForm.class) }}
-                <button type="submit" class="btn ">Add</button>
-                {{ form_end(headphoneForm) }}
-            </div>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">HPH Admin page</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/user">User management</a></li>
+                <li><a href="/">Management of goods</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
         </div>
+    </nav>
 
 
-
-                <div class="col s12 m3">
-
-                            {% for hp in headphone %}
-                            <p>{{ hp.model }}</p>
-                            <p>{{ hp.description }}</p>
-                            <p>{{ hp.cost }}</p>
-
-                            {% endfor %}
-                </div>
-
-    </div>
 {% endblock %}
